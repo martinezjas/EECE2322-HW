@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{listings}
+
+\geometry{a4paper, margin=1in}
+
+\title{EECE 2322 Fall 2023 Homework 1}
+\author{Jason Martinez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Questions}
+
+\begin{enumerate}
+    \item[(a)] (2 pts) Derive the outputs $F1$ and $F2$ as Boolean functions of the four inputs $A$, $B$, $C$, and $D$, as implemented in the circuit.
+        \begin{enumerate}
+            \item $F_1 = [A \lor [\neg B \land C]] \lor [D \oplus [\neg A \land B]]$
+            \item $F_2 = \neg A \land B$
+        \end{enumerate}
+
+    \item[(b)] (2 pts) List the truth table for the four input variables. Then determine and list the binary values for $T1$ through $T4$ and outputs $F1$ and $F2$ in the table.
+        \begin{table}[!htbp]
+            \begin{tabular}{llllllllll}
+                $A$ & $B$ & $C$ & $D$ & $T_1$ & $T_2$ & $T_3$ & $T_4$ & $F_1$ & $F_2$ \\
+                1   & 1   & 1   & 1   & 0     & 0     & 1     & 1     & 1     & 0     \\
+                1   & 1   & 1   & 0   & 0     & 0     & 1     & 0     & 1     & 0     \\
+                1   & 1   & 0   & 1  & 0     & 0     & 1     & 1     & 1     & 0     \\
+                1   & 1   & 0   & 0   & 0     & 0     & 1     & 0     & 1     & 0     \\
+                1   & 0   & 1   & 1   & 1     & 0     & 1     & 1     & 1     & 0     \\
+                1   & 0   & 1   & 0   & 1     & 0     & 1     & 0     & 1     & 0     \\
+                1   & 0   & 0   & 1   & 0     & 0     & 1     & 1     & 1     & 0     \\
+                1   & 0   & 0   & 0   & 0     & 0     & 1     & 0     & 1     & 0     \\
+                0   & 1   & 1   & 1   & 0     & 1     & 0     & 1     & 0     & 1     \\
+                0   & 1   & 1   & 0   & 0     & 1     & 0     & 0     & 1     & 1     \\
+                0   & 1   & 0   & 1   & 0     & 1     & 0     & 1     & 0     & 1     \\
+                0   & 1   & 0   & 0   & 0     & 1     & 0     & 0     & 1     & 1     \\
+                0   & 0   & 1   & 1   & 1     & 0     & 1     & 1     & 1     & 0     \\
+                0   & 0   & 1   & 0   & 1     & 0     & 1     & 0     & 1     & 0     \\
+                0   & 0   & 0   & 1   & 0     & 0     & 0     & 1     & 1     & 0     \\
+                0   & 0   & 0   & 0   & 0     & 0     & 0     & 0     & 0     & 0
+            \end{tabular}
+        \end{table}
+
+    \item[(c)] (3 pts) Complete two separate 4-input K-Maps, one for each of the outputs $F1$ and $F2$. Simplify with the K-Maps and show the final Boolean expressions for the two outputs.
+
+    \item[(d)] (2 pts) Redesign the simplified output $F1$ with all NAND gates.
+
+    \item[(e)] (2 pts) Redesign the simplified output $F2$ with all NOR gates.
+
+    \item[(f)] (2 pts) Write a SystemVerilog module for the output $F1$ only as implemented in the circuit design given above using the Boolean expression from part (a) above with Behavioral continuous model.
+
+    \item[(g)] (2 pts) Write a SystemVerilog module (using structural model) of the output $F1$ circuit implemented with all NAND gates in part (d) above in the same SystemVerilog design file used in part (f).
+
+    \item[(h)] (2 pts) Write an appropriate test-bench for the two module circuits above that tests the correct behavior and similarity of your design for the given combination of the inputs.
+
+    \item[(i)] (3 pts) Simulate your SystemVerilog design with Xilinx Vivado and show the screen capture of both the terminal output ($\texttt{\$monitor}$ task) and waveform output of the simulation verifying correct behavior from both modules.
+\end{enumerate}
+
+\end{document}

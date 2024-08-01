@@ -1,0 +1,6 @@
+(define (color-stack)
+  (define when "Sat, 9/23 @ 8:30 PM")
+  (define where "EXP Rooftop Terrace")
+  (define rsvp "https://nupd.northeastern.edu")
+  (define what "la mama de la mama de la mama de la mama de la mama de la mama")
+  (list when where rsvp what))
